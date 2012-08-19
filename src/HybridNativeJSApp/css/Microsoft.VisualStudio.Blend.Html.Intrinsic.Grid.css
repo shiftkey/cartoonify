@@ -1,0 +1,8 @@
+﻿.ms-grid
+{
+    display: -ms-grid;
+    -ms-grid-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    width: auto;
+    height: 400px;
+}

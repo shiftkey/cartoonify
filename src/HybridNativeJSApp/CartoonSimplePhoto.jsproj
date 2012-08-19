@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>4fe0dc46-d076-4287-a7ae-349787585e4b</ProjectGuid>
+    <ExpressionBlendVersion>5.0.30514.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageCertificateKeyFile>HybridNativeJSApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>D409A8B50974712EA789EFED7F6EB1335A1A4E83</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="css\Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid.css" />
+    <Content Include="default.html" />
+    <Content Include="js\imageProcessing.js" />
+    <None Include="HybridNativeJSApp_TemporaryKey.pfx" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\smalllogo.png" />
+    <Content Include="images\splashscreen.png" />
+    <Content Include="images\storelogo.png" />
+    <Content Include="js\capture.js" />
+    <Content Include="js\default.js" />
+    <Content Include="css\default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\imaging\imaging.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.1.0.RC, Version=1.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

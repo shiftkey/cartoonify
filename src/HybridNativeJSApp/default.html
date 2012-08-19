@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SimplePhotoJS</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0.RC/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0.RC/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0.RC/js/ui.js"></script>
+
+    <!-- SimplePhotoJS references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/capture.js"></script>
+    <script src="/js/imageProcessing.js"></script>
+    <script src="/js/default.js"></script>
+	<link href="/css/Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="contenthost fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Cartoonify</span>
+            </h1>
+        </header>
+		<section aria-label="Main content" role="main">
+			<div class="ms-grid">
+		            <div id="photo" style="-ms-grid-column: 1; -ms-grid-row: 1;">
+			            <button class="action" id="takePhoto">Capture Photo</button>
+                        <img class="imageHolder" id="capturedPhoto" alt="camera holder" src="images/storelogo.png"/>
+		            </div>
+		            <div id="cartoon" style="-ms-grid-column: 2; -ms-grid-row: 1;">
+			            <button class="action" id="cartoonify">Cartoonify</button>
+				        <img class="imageHolder" id="cartoonifiedPhoto" alt="cartoon holder" src="images/storelogo.png"/>
+		            </div>
+                    <div id="progress" class="hidden" style="-ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-span: 2; margin: 95.52px -1.49px 4.48px 1.49px; -ms-grid-row-span: 2;">
+                        <progress id="progressbar"  max="100" value="0"></progress>
+			            <span id="progresstext"></span>
+                    </div>
+			</div>
+		</section>
+    </div>
+</body>
+</html>
