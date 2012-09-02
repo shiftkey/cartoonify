@@ -13,10 +13,11 @@
 
     function makeProgressVisible(toggle) {
         var tag = document.getElementById("progress");
-        // if (toggle)
-            // hide
-            // else
-        //show
+        if (toggle) {
+            tag.style.visibility = "block";
+        } else {
+            tag.style.display = "none";
+        }
     }
 
     function displayImageFromPath(imgPath, imgTag) {
@@ -25,6 +26,9 @@
                 var url = URL.createObjectURL(imgFile);
                 var tag = document.getElementById(imgTag);
                 tag.src = url;
+            },
+            function (error) {
+            
             });
     }
   

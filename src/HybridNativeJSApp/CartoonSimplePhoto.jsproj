@@ -55,6 +55,7 @@
     <Content Include="css\Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid.css" />
     <Content Include="default.html" />
     <Content Include="js\imageProcessing.js" />
+    <Content Include="js\import.js" />
     <None Include="HybridNativeJSApp_TemporaryKey.pfx" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />

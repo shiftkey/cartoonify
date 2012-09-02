@@ -18,6 +18,7 @@
                 var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
                 dataTransferManager.addEventListener("datarequested", imageProcessing.dataRequested);
                 document.getElementById("takePhoto").addEventListener("click", capture.photo, false);
+                document.getElementById("importPhoto").addEventListener("click", select.fromFile, false);
                 document.getElementById("cartoonify").addEventListener("click", imageProcessing.cartoonifyImage, false);
             });
         }
