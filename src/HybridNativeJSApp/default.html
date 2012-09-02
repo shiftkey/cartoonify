@@ -27,21 +27,20 @@
         </header>
 		<section aria-label="Main content" role="main">
 			<div class="ms-grid">
-		            <div id="photo" style="-ms-grid-column: 1; -ms-grid-row: 1;">
-		                <button class="action" id="takePhoto">Capture Photo</button>
-                        <button class="action" id="importPhoto">Import Photo</button>
-                        <img class="imageHolder" id="capturedPhoto" alt="camera holder" src="images/storelogo.png"/>
+		            <div id="photo" style="-ms-grid-column: 1; -ms-grid-row: 1;" class="ms-grid">
+		                <button class="action" id="takePhoto" style="-ms-grid-column: 2; -ms-grid-row: 1; margin: 10px;">Capture Photo</button>
+                        <button class="action" id="importPhoto" style="-ms-grid-column: 1; -ms-grid-row: 1; margin: 10px;">Import Photo</button>
+                        <img class="imageHolder" id="capturedPhoto" alt="camera holder" src="images/storelogo.png" style="-ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-span: 2; max-height: 500px; margin-top: 0px;"/>
 		            </div>
-		            <div id="cartoon" style="-ms-grid-column: 2; -ms-grid-row: 1;">
-			            <button class="action" id="cartoonify">Cartoonify</button>
-				        <img class="imageHolder" id="cartoonifiedPhoto" alt="cartoon holder" src="images/storelogo.png"/>
+		            <div id="cartoon" style="-ms-grid-column: 2; -ms-grid-row: 1; -ms-grid-column: 2; -ms-grid-columns: 1fr;" class="ms-grid">
+			            <button class="action" style="-ms-grid-column: 1; -ms-grid-row: 1; margin: 10px;" id="cartoonify">Cartoonify</button>
+				        <img class="imageHolder" id="cartoonifiedPhoto" alt="cartoon holder" src="images/storelogo.png" style="-ms-grid-column: 1; -ms-grid-row: 2; max-height: 500px;"/>
 		            </div>
-                    <div id="progress" class="hidden" style="-ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-span: 2; -ms-grid-row-span: 2;">
-                        <progress id="progressbar"  max="100" value="0"></progress>
-			            <span id="progresstext"></span>
-                    </div>
 			</div>
 		</section>
+		<div id="progress" class="hidden" style="-ms-grid-column: 1; -ms-grid-row: 2; -ms-grid-column-span: 1; -ms-grid-row-span: 1; margin: 545.29px 0px 0px 118.2px;">
+			<progress id="progressbar"  max="100" value="0" style="width: 500px;"></progress><span id="progresstext" style="font-size: 18px; margin-left: 20px; margin-top: 0px; position: relative; left: -0.25px; top: 3.13px;">10</span>
+		</div>
     </div>
 </body>
 </html>

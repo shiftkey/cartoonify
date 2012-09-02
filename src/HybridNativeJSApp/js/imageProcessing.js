@@ -14,9 +14,9 @@
     function makeProgressVisible(toggle) {
         var tag = document.getElementById("progress");
         if (toggle) {
-            tag.style.visibility = "block";
+            tag.className = tag.className.replace(/(?:^|\s)hidden(?!\S)/g, '');
         } else {
-            tag.style.display = "none";
+            tag.className += " hidden";
         }
     }
 
@@ -31,22 +31,18 @@
             
             });
     }
-  
-    function cartoonifyImage() {
-        updateProgress(0);
-        var tmpFolder = Windows.Storage.ApplicationData.current.temporaryFolder;
-
-        var dstImgPath = tmpFolder.path + "\\fred.jpg";
-
+    
+    function startProcessing(inputFile, outputFile) {
+        makeProgressVisible(true);
         // the magic happens right here
         var nativeObject = new imaging.WinRTComponent();
 
-        nativeObject.transformImageAsync(imageProcessing.fileReference.path, dstImgPath).then(
+        nativeObject.transformImageAsync(inputFile, outputFile).then(
             function () {
-                    updateProgress(100);
-                    makeProgressVisible(false);
-                    displayImageFromPath(dstImgPath, "cartoonifiedPhoto");
-                },
+                updateProgress(100);
+                makeProgressVisible(false);
+                displayImageFromPath(outputFile, "cartoonifiedPhoto");
+            },
                 function (error) {
                     makeProgressVisible(true);
                     updateProgress(0);
@@ -55,6 +51,24 @@
                     updateProgress(percent);
                 }
             );
+    }
+  
+    function cartoonifyImage() {
+
+        var tmpFolder = Windows.Storage.ApplicationData.current.temporaryFolder;
+        var outputFile = tmpFolder.path + "\\output" + imageProcessing.fileReference.fileType;
+
+        Windows.Storage.StorageFile.getFileFromPathAsync(outputFile)
+            .done(function (file) {
+                file.deleteAsync(Windows.Storage.StorageDeleteOption.permanentDelete)
+                    .done(function () {
+                         startProcessing(imageProcessing.fileReference.path, outputFile);
+                    });
+                  },
+                  function(error) {
+                      // not found
+                      startProcessing(imageProcessing.fileReference.path, outputFile);
+                  });
     }
 
     function dataRequested(e) {
@@ -78,12 +92,10 @@
         }
     }
 
-
     WinJS.Namespace.define("imageProcessing", {
         fileReference : fileReference,
         cartoonifyImage: cartoonifyImage,
         displayImageFromPath: displayImageFromPath,
         dataRequested: dataRequested
     });
-
 })();

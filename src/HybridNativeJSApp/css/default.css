@@ -3,7 +3,7 @@
     cursor: default;
 }
 
-#hidden {
+.hidden {
     visibility:hidden;
 }
 
